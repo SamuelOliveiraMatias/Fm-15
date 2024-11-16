@@ -1,0 +1,567 @@
+@import url(https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out
+}
+
+::-webkit-scrollbar {
+  display: none
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth
+}
+
+body {
+  position: relative;
+  background-color: #191919
+}
+
+a {
+  text-decoration: none
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.header {
+  width: 80%;
+  padding: 50px 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, .1);
+  border: 1px solid rgba(255, 255, 255, .5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center
+}
+
+.header h1,
+.dropdown a {
+  color: #000
+}
+
+.header h1 {
+  font-size: 72px;
+  text-align: center;
+  padding: 0 5px 0 0;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  display: inline-block;
+  border-right: 5px solid;
+  animation: typing 2s, cursor .4s step-end infinite alternate
+}
+
+@keyframes cursor {
+  50% {
+    border-color: transparent
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+
+.header .container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 0 0 0;
+  border-top: 2px solid rgba(255, 255, 255, .5)
+}
+
+.header .container span {
+  font-size: 30px
+}
+
+.header .container .icon {
+  width: 10%;
+  text-align: center
+}
+
+.header .container .text {
+  width: 100%
+}
+
+.header .container a {
+  color: #000;
+  text-decoration: none
+}
+
+.carousel {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative
+}
+
+.carousel-container {
+  width: 600%;
+  display: flex;
+  transition: transform 0.5s ease
+}
+
+.carousel-item {
+  flex: 0 0 16.67%;
+  display: flex;
+  font-size: 24px;
+  align-items: flex-start;
+  justify-content: flex-start
+}
+
+.carousel-item img {
+  width: 40px;
+  height: 100%;
+  padding: 0 10px 0 5px;
+  vertical-align: middle
+}
+
+.carousel-item a {
+  width: 100%;
+  height: 100%;
+  color: #333;
+  text-decoration: none;
+  margin: 0 20px 0 5px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: all 0.3s;
+  backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, .2)
+}
+
+.carousel-item a:hover {
+  backdrop-filter: blur(15px);
+  background-color: rgba(255, 255, 255, .5);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .2)
+}
+
+.content {
+  padding: 20px;
+  margin-top: 20px
+}
+
+.cardSection {
+  width: 100%;
+  height: 100vh;
+  margin: 50px 0
+}
+
+.card {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  filter: blur(20px);
+  transform: translateY(50px) scale(.9) rotate(10deg);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, .1);
+  transition: opacity 0.5s ease, filter 0.5s ease, transform 0.5s ease
+}
+
+.card.visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0) scale(1) rotate(0);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(34, 40, 49, .6);
+  box-shadow: rgba(0, 0, 0, .25) 0 54px 55px, rgba(0, 0, 0, .12) 0 -12px 30px, rgba(0, 0, 0, .12) 0 4px 6px, rgba(0, 0, 0, .17) 0 12px 13px, rgba(0, 0, 0, .09) 0 -3px 5px
+}
+
+.cardHead {
+  width: 100%;
+  height: 10%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px 10px 0 0;
+  backdrop-filter: blur(30px);
+  background-color: rgba(97, 97, 97, .6)
+}
+
+.cardTittle {
+  cursor: pointer;
+  position: relative
+}
+
+.cardTittle:hover {
+  transform: scale(1.1)
+}
+
+.cardTittle a {
+  color: #fff
+}
+
+.cardTittle h2 {
+  display: inline;
+  font-size: 30px;
+  letter-spacing: 8px;
+  font-family: "Castoro Titling", serif
+}
+
+.cardTittle h2:hover {
+  text-shadow: 0 0 20px #fff
+}
+
+.cardContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: none;
+  border-radius: 0 0 10px 10px;
+  background-color: transparent;
+  transition: backdrop-filter 0.3s ease, background-color 0.3s ease
+}
+
+.buttons {
+  right: 30px;
+  bottom: 15px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center
+}
+
+.buttons .up,
+.list {
+  width: 100%;
+  margin: 5px;
+  height: 100%;
+  padding: 10px;
+  font-size: 50px;
+  text-align: center;
+  border: none;
+  opacity: .3;
+  color: #000;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, .25) 0 54px 55px, rgba(0, 0, 0, .12) 0 -12px 30px, rgba(0, 0, 0, .12) 0 4px 6px, rgba(0, 0, 0, .17) 0 12px 13px, rgba(0, 0, 0, .09) 0 -3px 5px
+}
+
+.buttons .up:hover,
+.list:hover {
+  opacity: .7;
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, .8);
+  box-shadow: rgba(0, 0, 0, .3) 0 4px 10px
+}
+
+.nomes {
+  left: 10px;
+  bottom: 10px;
+  opacity: .3;
+  cursor: pointer;
+  position: fixed
+}
+
+.nomes span {
+  font-size: 30px;
+  text-align: center;
+  padding: 0 5px 0 0;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  display: inline-block;
+  border-right: 3px solid;
+  animation: typing 2s, cursor .4s step-end infinite alternate
+}
+
+.nomes:hover {
+  left: 20px;
+  opacity: 1;
+  transform: scale(1.1)
+}
+
+.dropdown {
+  right: 150px;
+  bottom: 22px;
+  display: none;
+  position: fixed;
+  opacity: 0;
+  padding: 10px;
+  border-radius: 5px;
+  backdrop-filter: blur(10px);
+  box-shadow: rgba(0, 0, 0, .25) 0 54px 55px, rgba(0, 0, 0, .12) 0 -12px 30px, rgba(0, 0, 0, .12) 0 4px 6px, rgba(0, 0, 0, .17) 0 12px 13px, rgba(0, 0, 0, .09) 0 -3px 5px;
+  z-index: 1000;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease
+}
+
+.dropdown.show {
+  opacity: 1;
+  display: block;
+  transform: translateY(0)
+}
+
+.dropdown.hide {
+  opacity: 0;
+  transform: translateY(20px)
+}
+
+.dropdown ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none
+}
+
+.dropdown li {
+  margin: 5px 0;
+  border-radius: 10px
+}
+
+.dropdown li img {
+  width: 40px;
+  height: 100%;
+  margin: 0 18px 0 0;
+  vertical-align: middle
+}
+
+.dropdown a {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  color: #000;
+  font-size: 20px;
+  text-decoration: none;
+  text-shadow: 1px 1px 15px #000;
+  font-family: "Castoro Titling", serif;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: rgba(0, 0, 0, .25) 0 54px 55px, rgba(0, 0, 0, .12) 0 -12px 30px, rgba(0, 0, 0, .12) 0 4px 6px, rgba(0, 0, 0, .17) 0 12px 13px, rgba(0, 0, 0, .09) 0 -3px 5px
+}
+
+.dropdown a:hover {
+  background-color: rgba(255, 255, 255, .3);
+  color: #000
+}
+
+.dropdown a.active {
+  color: #000;
+  background-color: rgba(255, 255, 255, .5);
+  box-shadow: rgb(38, 57, 77) 0 20px 30px -10px
+}
+
+.dropdown li:hover,
+img {
+  transform: scale(1.1)
+}
+
+.track {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative
+}
+
+.image-track {
+  gap: 10vmin;
+  cursor: grab;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  position: absolute;
+  user-select: none;
+  transform: translate(0%, -50%)
+}
+
+.image-track:active {
+  cursor: grabbing
+}
+
+.image-track>.image {
+  width: 40vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position: 100% center;
+  opacity: .3;
+  border-radius: 30px;
+  border: 3px solid #fff;
+  box-shadow: rgba(0, 0, 0, .3) 0 19px 38px, rgba(0, 0, 0, .22) 0 15px 12px
+}
+
+.image-track>.image:hover {
+  opacity: 1;
+  width: 48vmin;
+  height: 60vmin;
+  border-radius: 10px;
+  border: 2px solid gray;
+  box-shadow: rgba(0, 0, 0, .25) 0 54px 55px, rgba(0, 0, 0, .12) 0 -12px 30px, rgba(0, 0, 0, .12) 0 4px 6px, rgba(0, 0, 0, .17) 0 12px 13px, rgba(0, 0, 0, .09) 0 -3px 5px
+}
+
+.image-track>.image:active {
+  opacity: 1;
+  width: 48vmin;
+  height: 60vmin;
+  border-radius: 10px;
+  border: 2px solid gray;
+  box-shadow: rgba(0, 0, 0, .25) 0 54px 55px, rgba(0, 0, 0, .12) 0 -12px 30px, rgba(0, 0, 0, .12) 0 4px 6px, rgba(0, 0, 0, .17) 0 12px 13px, rgba(0, 0, 0, .09) 0 -3px 5px
+}
+
+#topo {
+  background: url(../img/img/pexels-asadphoto-169188.jpg) no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%
+}
+
+#sec1 {
+  background: url(../img/img/pexels-sezgin-kaya-81430309-28448645.jpg) no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%
+}
+
+#sec2 {
+  background: url(../img/img/pexels-inna-lesyk-67454-566450.jpg) no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%
+}
+
+#sec3 {
+  background: url(../img/img/pexels-pavel-danilyuk-7119185.jpg) no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%
+}
+
+#sec4 {
+  background: url(../img/img/pexels-din-127253222-17399012.jpg) no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%
+}
+
+#sec5 {
+  background: url(../img/img/pexels-asadphoto-3601456.jpg) no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%
+}
+
+@media (max-width:843px) {
+  .header h1 {
+    font-size: 62px
+  }
+
+  .carousel-item a {
+    font-size: 20px
+  }
+
+  .cardTittle h2 {
+    font-size: 25px
+  }
+}
+
+@media (max-width:733px) {
+  .header h1 {
+    font-size: 52px
+  }
+
+  .carousel-item a {
+    font-size: 15px
+  }
+
+  .cardTittle h2 {
+    font-size: 20px
+  }
+}
+
+@media (max-width:629px) {
+  .header h1 {
+    font-size: 47px
+  }
+}
+
+@media (max-width:569px) {
+  .header h1 {
+    font-size: 42px
+  }
+}
+
+@media (max-width:525px) {
+  .header h1 {
+    font-size: 37px
+  }
+
+  .cardTittle h2 {
+    font-size: 15px
+  }
+}
+
+@media (max-width:463px) {
+  .header h1 {
+    font-size: 35px
+  }
+
+  .carousel-item a {
+    font-size: 11px
+  }
+}
+
+@media (max-width:441px) {
+  .header h1 {
+    font-size: 30px
+  }
+
+  .carousel-item a {
+    font-size: 11px
+  }
+}
+
+@media (max-width:381px) {
+  .header h1 {
+    font-size: 28px
+  }
+
+  .carousel-item a {
+    font-size: 10px
+  }
+
+  .cardTittle h2 {
+    font-size: 12px
+  }
+}
+
+@media (max-width:363px) {
+  .header h1 {
+    font-size: 25px
+  }
+}
+
+@media (max-width:333px) {
+  .header h1 {
+    font-size: 20px
+  }
+}
+
+@media (max-width:329px) {
+  .header h1 {
+    font-size: 24px
+  }
+
+  .carousel-item a {
+    font-size: 9px
+  }
+}
