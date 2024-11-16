@@ -1,0 +1,28 @@
+@import 'variables.scss';
+
+header {
+    width: 1140px;
+    max-width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    height: 50px;
+    align-items: center;
+
+    .logo {
+        font-weight: bold;
+        color: $first;
+    }
+
+    nav a {
+        margin-left: 30px;
+        text-decoration: none;
+        color: $first;
+        font-weight: 500;
+        cursor: pointer;
+        margin-left: 30px;
+        text-decoration: none;
+        color: $first;
+        font-weight: 500;
+    }
+}
